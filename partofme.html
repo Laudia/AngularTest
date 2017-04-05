@@ -1,0 +1,18 @@
+<h2>Part of you</h2>
+<div ng-controller="submenu">
+<!--inputan-->
+	<ul>
+		<li ng-repeat=" data in list track by $index"><span> {{$index}} </span>
+		<input type="text" ng-model="data.nama" placeholder="Nama"/>
+		<input type="text" ng-model="data.umur" placeholder="Umur"/>
+		</li>
+	</ul>
+<!--output-->
+	<ul>
+		<li ng-repeat=" data in list track by $index"><span> {{$index}} </span>
+		Nama: {{data.nama}}
+		Umur: {{data.umur}}
+		</li>
+	</ul>
+	<button type="button" ng-click="submit()" >CLICK ME</button>
+</div>

@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="sismiop">
   <head>
+    <title>Angular Test</title>
     <script src="angular.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
-    <div>
+    <div ng-controller="menu">
       <label>Nama:</label>
       <input type="text" ng-model="namaUser" placeholder="Masukkan nama disini">
       <hr>
       <h1>Halo {{namaUser}}!</h1>
+      <div>
+        <div ng-if="namaUser.toUpperCase() == 'LAUD'">
+          <span>{{ namaUser }}</span>
+        </div>
+      </div>
+      <div>
+      <ng-include src="'input.html'"></ng-include>
     </div>
   </body>
 </html>
