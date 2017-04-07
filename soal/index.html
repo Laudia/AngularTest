@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="sismiop">
+
+<head>
+    <title>Angular Test</title>
+    <script src="angular.min.js"></script>
+    <script src="angular-cookies.js"></script>
+    <script src="jquery.js"></script>
+    <script src="soal_1.js"></script>
+</head>
+
+<body>
+    <div ng-controller="menu">
+        <h1>Soal 1</h1>
+        </br>
+        <label>Nama:</label>
+        <input type="text" ng-model="namaUser" placeholder="Masukkan nama disini">
+        <h2>{{namaUser}}!</h2>
+        <hr>
+    </div>
+    <div ng-controller="soal2">
+        <h1>Soal 2</h1>
+        </br>
+        <input type="number" ng-model="uang"/>
+        </br>
+        <h3>{{ uang | currency:"IDR ":2}}<h3>
+        <br>
+        <hr>
+    </div>
+    <div ng-controller="soal3">
+        <h1>Soal 3</h1>
+        <ul>
+        <li ng-repeat="each in list">
+          {{$index +1}}  {{"Nama: "}}{{each}}
+        </li>
+    </ul>
+    <hr>
+    </div>
+    <div ng-controller="soal4">
+    <h1>Soal 4</h1>
+        </br>
+    <select ng-model="inputSelect">
+        <option ng-repeat="key in inputSelectionKeys" ng-value="key">{{inputSelection[key]}}</option>
+    </select>
+    </br></br>
+    <hr>
+    </div>
+    <div ng-controller="soal5">
+    <h1>Soal 5</h1>
+        <ul>
+        <li ng-repeat="row in list track by $index">
+          <input type="text" ng-model="row.nama"/>
+        </li>
+      </ul>
+      <ul>
+        <li ng-repeat="row in list track by $index">
+          <h3>{{row.nama}}</h3>
+        </li>
+      </ul>
+    </div>
+</body>
+</html>

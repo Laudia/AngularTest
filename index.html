@@ -3,22 +3,20 @@
   <head>
     <title>Angular Test</title>
     <script src="angular.min.js"></script>
+    <script src="angular-cookies.js"></script>
     <script src="jquery.js"></script>
     <script src="script.js"></script>
   </head>
   <body>
     <div ng-controller="menu">
-      <label>Nama:</label>
-      <input type="text" ng-model="namaUser" placeholder="Masukkan nama disini">
-      <hr>
-      <h1>Halo {{namaUser}}!</h1>
-      <div>
-        <div ng-if="namaUser.toUpperCase() == 'LAUD'">
-          <span>{{ namaUser }}</span>
-        </div>
+      <input type="number" ng-model="uang"/>
+      {{ uang | currency:"IDR ":2}}
+      <button type="button" ng-click="saveCookie()">
+      SAVE COOKIE
+      </button>
+      <button type="button" ng-click="removeCookie()">
+      REMOVE COOKIE
+      </button>
       </div>
-      <div>
-      <ng-include src="'input.html'"></ng-include>
-    </div>
   </body>
 </html>

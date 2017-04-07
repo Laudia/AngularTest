@@ -2,8 +2,39 @@
 <input type="text" ng-value="inputStatis"/>
 <h1>{{inputStatis}}</h1>
 <select ng-model="inputSelect">
+<br/>
 	<option ng-repeat="key in dataSelectionKeys" 
 	ng-value="key">{{dataSelection[key]}}
 	</option>
 </select>
+<br/>
+	<label>
+		<input type="checkbox" ng-model="inputCheckbox"/>
+		Switch
+	</label>
+<div ng-if="inputCheckbox">
+	<h2>Checked</h2>
+</div>
+<br/>
+<input type="number" min ="0" max="1000" ng-model="inputNumber"/>
+{{(inputNumber * inputNumber) | number:1}}
+<br/>
+<br/>
+<input type="date" ng-model="tanggalJadi"/>
+<br/>
+<br/>
+<input type="time" ng-model="inputTime">
+{{ inputTime | date: 'HH:mm:ss'}}
+<br/>
+<br/>
+<input type="text" ng-paste="inputPaste=true"/>
+Paste Ora?{{inputPaste}}
+<br/>
+<br/>
+<input type="text" ng-cut="inputCut=true"/>
+Cut ??{{inputCut}}
+<br/>
+<br/>
+<input type="text" ng-copy="inputCopy=true"/>
+Copy ??{{inputCopy}}
 </div>
